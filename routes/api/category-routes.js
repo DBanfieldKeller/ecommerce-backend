@@ -5,7 +5,7 @@ const { Category, Product } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const categoryData = await Category.findAll()
+    const categoryData = await Category.findAll({ include: [{ all: true, nested: true }]})
 
     res.status(200).json(categoryData);
   } catch (err) {
@@ -48,18 +48,15 @@ router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Category.update(
     {
-      // All the fields you can update and the data attached to the request body.
       category_name: req.body.categoryName
     },
     {
-      // Gets the books based on the isbn given in the request parameters
       where: {
         category_id: req.params.id,
       },
     }
   )
     .then((updatedCategory) => {
-      // Sends the updated book as a json response
       res.json(updatedCategory);
     })
     .catch((err) => res.json(err));
