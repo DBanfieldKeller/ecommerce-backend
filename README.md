@@ -3,7 +3,7 @@
 ## Description
 This project demonstrates a backend SQL database for a hypothetical ecommerce application. The ecommerce_db database is created with the provided schema and populated with seed index. The application makes use of sequelize to manage the SQL queries with javascript. The app is intended to be able to create, read, update, and delete data from the "category", "product", and "tag" tables.  It attempts to make use of associations between each of these tables. The app also makes use of dotenv, mysql2, and express npms.
 
-This project is currently a work in progress and will be updated in the future. Currently, the many-to-many relationship between product and tag is not working correctly and prohibits the user from updating or creating products.
+This project is currently a work in progress and will be updated in the future. Currently, the many-to-many relationship between product and tag is not working correctly and does not allow the addition of tags to new products.
 
 ## Table of Contents
  - [Description](#description)
@@ -20,6 +20,10 @@ npm run seed
  
  ## Usage
 Once the server is running, you can use Insomnia to try the GET, PUT, POST, and DELETE http methods to alter the database.
+
+A demonstration is available at the following link:
+
+https://drive.google.com/file/d/1pPMQIlN_lF8xl4KZ80JtgpK75MXzwztb/view
 
 ## License
 This application is not under any license.
