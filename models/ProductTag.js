@@ -15,19 +15,23 @@ ProductTag.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_id: {
+    product_product_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: Product,
         key: 'product_id',
-      }
+      }, 
+      onDelete: "CASCADE"
     },
-    tag_id: {
+    tag_tag_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: Tag,
         key: 'tag_id'
-      }
+      },
+      onDelete: "CASCADE"
     }
   },
   {
